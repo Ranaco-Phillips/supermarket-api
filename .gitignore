@@ -1,1 +1,49 @@
-/.env
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.egg
+*.log
+
+# -----------------------
+# Virtual Environments
+# -----------------------
+venv/
+ENV/
+env/
+.venv/
+
+# -----------------------
+# IDEs & Editors
+# -----------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------
+# OS files
+# -----------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------
+# Environment & Config
+# -----------------------
+.env
+*.ini
+*.cfg
+*.toml
+
+# -----------------------
+# Databases / Cache
+# -----------------------
+*.db
+*.sqlite3
+*.db-journal
