@@ -38,5 +38,5 @@ def validate_categories(supermarket_name: str, category_map: dict):
             f"Valid categories are: {list(STANDARD_CATEGORIES.values())}"
         )
     else:
-        print(f"[{supermarket_name}] ✅ Category mappings are valid.")
+        print(f"[{supermarket_name}] Category mappings are valid.")
 
