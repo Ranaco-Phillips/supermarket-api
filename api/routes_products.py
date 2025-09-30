@@ -6,6 +6,7 @@ from database.models import Product, Supermarket, Category
 
 router = APIRouter()
 
+# Get all products or filtered products
 @router.get("/")
 def get_products(
     supermarket: Optional[int] = Query(None, description="Filter by supermarket ID"),
@@ -77,7 +78,7 @@ def get_products(
         ],
     }
 
-
+# Get products by id
 @router.get("/{product_id}")
 def get_product(product_id: int, db: Session = Depends(get_db)):
     """

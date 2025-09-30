@@ -43,7 +43,7 @@ class Product(Base):
     category = relationship("Category", back_populates="products")
 
 
-# (Optional) price history if you want to track changes
+# (Optional) price history used for tracking changes
 class PriceHistory(Base):
     __tablename__ = "price_history"
 
