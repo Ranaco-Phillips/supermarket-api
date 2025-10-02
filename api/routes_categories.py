@@ -6,12 +6,12 @@ from database.models import Category
 router = APIRouter()
 
 # Get all categories
-@router.get("/categories")
+@router.get("/")
 def get_categories(db: Session = Depends(get_db)):
     return db.query(Category).all()
 
 # Get category by ID
-@router.get("/categories/{category_id}")
+@router.get("/{category_id}")
 def get_category(category_id: int, db: Session = Depends(get_db)):
     category = db.query(Category).filter(Category.id == category_id).first()
     if not category:
@@ -19,7 +19,7 @@ def get_category(category_id: int, db: Session = Depends(get_db)):
     return category
 
 # Create a new category
-@router.post("/categories")
+@router.post("/")
 def create_category(name: str, db: Session = Depends(get_db)):
     category = Category(name=name)
     db.add(category)
