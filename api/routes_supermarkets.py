@@ -6,12 +6,12 @@ from database.models import Supermarket
 router = APIRouter()
 
 # Get all supermarkets
-@router.get("/supermarkets")
+@router.get("/")
 def get_supermarkets(db: Session = Depends(get_db)):
     return db.query(Supermarket).all()
 
 # Get supermarket by ID
-@router.get("/supermarkets/{supermarket_id}")
+@router.get("/{supermarket_id}")
 def get_supermarket(supermarket_id: int, db: Session = Depends(get_db)):
     supermarket = db.query(Supermarket).filter(Supermarket.id == supermarket_id).first()
     if not supermarket:
@@ -19,7 +19,7 @@ def get_supermarket(supermarket_id: int, db: Session = Depends(get_db)):
     return supermarket
 
 # Create a new supermarket
-@router.post("/supermarkets")
+@router.post("/")
 def create_supermarket(name: str, db: Session = Depends(get_db)):
     supermarket = Supermarket(name=name)
     db.add(supermarket)
